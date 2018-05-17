@@ -1,0 +1,18 @@
+How to make
+
+
+spring starter project
+
+application.propertis 設定
+
+build.gradle 変更
+　jetty
+
+convert to JP project
+
+Bug 修正：　spring.jpa.open-in-view=false
+
+APIで　CRUD　画面
+
+
+ここで修正したら commitすること
