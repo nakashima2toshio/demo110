@@ -8,5 +8,6 @@ public class IndexController {
 	
 	@GetMapping("/login") public String login() { return "login";}
 	@GetMapping("/") public String index() { return "index";}
+	@GetMapping("/content") public String aContent() { return "content"; }
 	
 }

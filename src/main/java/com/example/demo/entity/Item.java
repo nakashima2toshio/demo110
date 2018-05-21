@@ -9,10 +9,6 @@ import lombok.Setter;
 import lombok.ToString;
 
 
-/**
- * The persistent class for the items database table.
- * 
- */
 @Entity
 @Table(name="items")
 @NamedQuery(name="Item.findAll", query="SELECT i FROM Item i")

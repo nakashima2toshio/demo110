@@ -5,11 +5,6 @@ import javax.persistence.*;
 
 import java.util.List;
 
-
-/**
- * The persistent class for the department database table.
- * 
- */
 @Entity
 @NamedQuery(name="Department.findAll", query="SELECT d FROM Department d")
 public class Department implements Serializable {

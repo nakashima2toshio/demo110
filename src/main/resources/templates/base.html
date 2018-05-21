@@ -1,0 +1,53 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"      
+      xmlns:layout    ="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+<title>layout base</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="Gettng started with Bootstrap">
+<meta name="author" content="toshio nakashima">
+<meta name="generator" content=" ">
+
+<!-- Bootstrap core CSS -->
+<link rel="stylesheet" href="./css/bootstrap.min.css">
+<!-- Documentation extras -->
+<link href="./css/docs.min.css" rel="stylesheet">
+
+</head>
+  <body>
+
+<header class="navbar navbar-expand navbar-dark flex-column flex-md-row bd-navbar">
+
+  <div class="navbar-nav-scroll">
+    <ul class="navbar-nav bd-navbar-nav flex-row">
+      <li class="nav-item">
+        <font color="#ffffff">NEC キャピタルソリューション</font>
+      </li>
+    </ul>
+  </div>
+  <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+  </ul>
+  <a class="btn btn-bd-download d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3" href="https://github.com/twbs/bootstrap/archive/v4.1.0.zip">お問い合わせ</a>
+</header>
+
+  <div class="container-fluid">
+  <div class="row">
+  
+	<div class="col-sm">
+		<!-- contents -->
+	    <div layout:fragment="content">Base here!</div>
+	</div>
+
+</div><!-- row -->
+</div><!-- container-fluid -->
+
+<script src="./js/jquery-3.3.1.min.js"></script>
+<script src="./js/bootstrap.bundle.min.js"></script>
+<script src="./js/docs.min.js"></script>
+
+  </body>
+</html>
