@@ -1,19 +1,31 @@
-<!DOCTYPE html>
-<html xmlns           ="http://www.w3.org/1999/xhtml"
-      xmlns:th        ="http://www.thymeleaf.org"
-      xmlns:layout    ="http://www.ultraq.net.nz/thymeleaf/layout">
-<head>
-    <meta http-equiv="Content-Type"    content="text/html; charset=UTF-8">
-<title>Insert title here</title>
-    <link rel="stylesheet" href="/css/bootstrap.css" />
-    <script src="./js/jquery.js"></script>
-    <script src="./js/bootstrap.js"></script>
-</head>
-<body>
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"      
+      xmlns:layout    ="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="common/base">
 
-    <div class="container">
-      <h1>Listing Players</h1>
-      <table class="table table-bordered">
+<head><title>Insert content is hear</title></head>
+<body>
+<!-- insert contents is hear -->
+<div layout:fragment="content">
+
+<p>
+ひとまずは、各画面のリンクをここに書く<br/>
+サンプル<br/>
+https://qiita.com/rubytomato@github/items/387d46ea34eb92071065
+</p>
+<p>
+all list <br/>
+検索<br/>
+更新<br/>
+新規<br/>
+</p>
+<p th:text="${items}" ></p> 
+<p th:class="${page}" ></p> 
+<p>ーーーー</p>
+
+      <h4>Listing Players</h4>
+      <table class="table table-bordered table-sm">
         <thead>
           <tr>
             <th>ID</th>
@@ -21,27 +33,28 @@
             <th>価格</th>
             <th>参照</th>
             <th>編集</th>
+            <th>チェックボックス</th>
             <th>削除</th>
           </tr>
         </thead>
         <tbody>
           <tr th:each="item:${items}" th:object="${item}">
-            <td th:text="*{id}"></td>
-            <td th:text="*{name}"></td>
-            <td th:text="*{price}"></td>
+            <td th:text="${item.id}"></td>
+            <td th:text="${item.name}"></td>
+            <td th:text="${item.price}"></td>
             
-            <td><a class="btn btn-default btn-xs" th:href="@{/items/{id}(id=*{id})}">参照</a></td>
-            <td><a class="btn btn-default btn-xs" th:href="@{/items/{id}/edit(id=*{id})}">編集</a></td>
-            
+            <td><a class="btn btn-default btn-xs" th:href="@{/items/{id}(id=${item.id})}">参照</a></td>
+            <td><a class="btn btn-default btn-xs" th:href="@{/items/{id}/edit(id=${item.id})}">編集</a></td>
+            <td>checkBox</td>
             <td>
-            <form th:action="@{/items/{id}(id=*{id})}" th:method="delete">
+            <form th:action="@{/items/{id}(id=${item.id})}" th:method="delete">
             <input class="btn btn-default btn-xs" type="submit" value="削除" />
             </form>
             </td>
           </tr>
         </tbody>
 	</table>
-	</div>
-	
+
+</div>
 </body>
 </html>
