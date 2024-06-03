@@ -1,0 +1,2 @@
+# `.gitattributes` ファイルの例: `.rb` ファイルを Java に分類する
+*.rb linguist-language=Java_Spring
